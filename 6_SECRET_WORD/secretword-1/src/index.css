@@ -1,0 +1,30 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, rgba(179, 9, 63, 1) 0%, rgba(69, 21, 49, 1)100%);
+  color: #f5deb3;
+}
+
+button {
+  background-color: #f5deb3;
+  color: rgba(179, 9, 63, 1) ;
+  padding: 0 45px;
+  border: 2px solid #f5deb3;
+  border-radius: 25px;
+  height: 50px;
+  font-weight: bold;
+ font-size:1.2em;
+ cursor: pointer;
+ transition: .4s;
+}
+
+button:hover{
+  background-color: rgba(179, 9, 63, 1);
+  color:#f5deb3;
+}
