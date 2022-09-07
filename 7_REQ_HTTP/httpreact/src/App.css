@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  margin: 1.5em;
+  padding: 1.5em;
+  border: 5px solid #282c34;
+
 }
 
 .App-logo {
@@ -22,6 +26,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
 }
 
 .App-link {
@@ -32,7 +37,35 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.add-products {
+  broder-top: 1px solid #000000
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5em;
+  padding: 1.5em;
+  border: 10px solid #000000;
+}
+
+form input {
+  display: flex;
+  flex-direction: column;
+
+  border-color: #61dafb;
+  margin-bottom: 15px;
+
+}
+
+ul {
+  text-align: left;
 }
