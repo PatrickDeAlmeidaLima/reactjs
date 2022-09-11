@@ -9,7 +9,7 @@ function App() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   // 4 - custom hook
-  const { data: items, httpConfig } = useFetch(url);
+  const { data: items, httpConfig, loading, error } = useFetch(url);
 
   // console.log(data);
   // 1 - resgatando dados
@@ -51,22 +51,28 @@ function App() {
   return (
     <div className="App">
       <h1>Lista de produtos</h1>
-      <ul>
-        {items && items.map((product) => (
-          <li key={product.id}>{product.name} - R$:{product.price}</li>
-        ))}
-      </ul>
+      {/* 6 - loading */}
+      {loading && <p>Carregando dados, aguarde.</p>}
+      {error && <p>{error}</p>}
+      {!loading &&
+        <ul>
+          {items && items.map((product) => (
+            <li key={product.id}>{product.name} - R$:{product.price}</li>
+          ))}
+        </ul>}
       <div className="add-products">
         <form onSubmit={handleSubmit}>
           <label >
             Nome:
-            <input type="text" value={name} name={name} onChange={(e) => setName(e.target.value)} />
+            <input type="text" value={name} name={name} required onChange={(e) => setName(e.target.value)} />
           </label>
           <label >
             Preço:
-            <input type="number" value={price} name={price} onChange={(e) => setPrice(e.target.value)} />
+            <input type="number" value={price} name={price} required onChange={(e) => setPrice(e.target.value)} />
           </label>
-          <input type="submit" value="Criar" />
+          {/* 7 - state de loading no post */}
+          {loading && <input type="submit" disabled value="Aguarde" />}
+          {!loading && <input type="submit" value="Criar" />}
         </form>
       </div>
     </div>
