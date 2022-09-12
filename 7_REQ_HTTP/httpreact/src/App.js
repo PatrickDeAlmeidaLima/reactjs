@@ -47,7 +47,10 @@ function App() {
     setName("");
     setPrice("");
   };
-
+  // 8 - desafio 6 excluindo dados
+  const handleRemove = (id) => {
+    httpConfig(id, "DELETE");
+  }
   return (
     <div className="App">
       <h1>Lista de produtos</h1>
@@ -57,7 +60,13 @@ function App() {
       {!loading &&
         <ul>
           {items && items.map((product) => (
-            <li key={product.id}>{product.name} - R$:{product.price}</li>
+            <li key={product.id}>{product.name} - R$:{product.price}
+              <button
+                style={{ marginLeft: "10px" }}
+                onClick={() => handleRemove(product.id)}>
+                Excluir
+              </button>
+            </li>
           ))}
         </ul>}
       <div className="add-products">
@@ -78,7 +87,6 @@ function App() {
     </div>
   );
 }
-
 export default App;
 
 
