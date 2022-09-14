@@ -1,6 +1,8 @@
 nav {
     display: flex;
     justify-content: center;
+    border: 1px solid #000;
+  
 }
 
 nav a {
@@ -8,6 +10,7 @@ nav a {
     padding: 5px;
     text-decoration: none;
     color: black;
+    border: 1px solid #000;
 }
 
 nav a:hover {
@@ -19,3 +22,4 @@ nav a:hover {
     background-color: #000;
     color: #ccc;
 }
+
