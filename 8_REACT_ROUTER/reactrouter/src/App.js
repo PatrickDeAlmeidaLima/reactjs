@@ -10,6 +10,8 @@ import About from "./pages/About";
 import Product from "./pages/Product";
 import Info from './pages/Info';
 import NotFound from './pages/NotFound'
+import SearchForm from './components/SearchForm';
+import Search from './pages/Search';
 function App() {
   return (
     <div className="App">
@@ -17,6 +19,8 @@ function App() {
       <BrowserRouter>
         {/* // 2 - links com react router */}
         <Navbar />
+        {/* 9 - search */}
+        <SearchForm />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -25,6 +29,8 @@ function App() {
           {/* 6 - nested route */}
           <Route path="/products/:id/info" element={<Info />} />
           {/* <Info /> */}
+          {/* 9 - search */}
+          <Route path="/search" element={<Search />} />
           {/* 7 - no match router */}
           <Route path="*" element={<NotFound />} />
         </Routes>
