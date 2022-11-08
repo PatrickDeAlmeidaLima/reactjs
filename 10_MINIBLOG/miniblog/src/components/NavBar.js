@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom";
+import { useAuthentication } from "../hooks/useAuthentication";
+import { useAuthValue } from "../context/AuthContent";
 import styles from './NavBar.module.css';
 const NavBar = () => {
+
+    const { user } = useAuthValue();
     return (
         <nav className={styles.navbar}>
             <NavLink to="/" className={styles.brand}>
@@ -12,16 +16,26 @@ const NavBar = () => {
                         Home
                     </NavLink>
                 </li>
-                <li>
+                {!user && (<><li>
                     <NavLink to="/login" className={({ isActive }) => (isActive ? styles.active : "")}>
                         Entrar
                     </NavLink>
                 </li>
-                <li>
-                    <NavLink to="/register" className={({ isActive }) => (isActive ? styles.active : "")}>
-                        Cadastrar
+                    <li>
+                        <NavLink to="/register" className={({ isActive }) => (isActive ? styles.active : "")}>
+                            Cadastrar
+                        </NavLink>
+                    </li></>)}
+                {user && (<><li>
+                    <NavLink to="/post/create" className={({ isActive }) => (isActive ? styles.active : "")}>
+                        Novo Post
                     </NavLink>
                 </li>
+                    <li>
+                        <NavLink to="/dashboard" className={({ isActive }) => (isActive ? styles.active : "")}>
+                            Dashboard
+                        </NavLink>
+                    </li></>)}
                 <li>
                     <NavLink to="/about" className={({ isActive }) => (isActive ? styles.active : "")}>
                         Sobre
