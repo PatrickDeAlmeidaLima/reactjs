@@ -1,32 +1,32 @@
-.hom {
+.home {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.search_form {
+  }
+  
+  .search_form {
     max-width: 100%;
-    width: 60;
+    width: 60%;
     display: flex;
     justify-content: center;
     margin-bottom: 2em;
-}
-
-.search_form input {
+  }
+  
+  .search_form input {
     margin-right: 10px;
     width: 50%;
-}
-
-.noposts {
+  }
+  
+  .noposts {
     text-align: center;
-}
-
-.noposts {
+  }
+  
+  .noposts p {
     margin-bottom: 1.5em;
-}
-
-
-.noposts a {
+  }
+  
+  
+  .noposts a {
     padding: 10px 25px;
-}
+  }

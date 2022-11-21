@@ -4,6 +4,7 @@ import styles from './Home.module.css';
 // hooks
 import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useFetchDocument } from '../../hooks/useFetchDocument';
 
 // components
 
@@ -13,7 +14,7 @@ import { useState } from 'react';
 const Home = () => {
 
   const [query, setQuery] = useState("");
-  const [posts] = useState([]);
+  const { documentos: posts, loading } = useFetchDocument("posts");
   const handleSubmit = (e) => {
     e.preventDefault()
   };
@@ -26,7 +27,13 @@ const Home = () => {
         <button className='btn btn-dark'>Pesquisar</button>
       </form>
       <div>
-        <h1>Posts...</h1>
+        {loading && <p>Carregando...</p>}
+        {posts &&
+          posts.map((posts) => (
+            <h3>
+              {posts.title}
+            </h3>
+          ))}
         {posts && posts.length === 0 && (
           <div className={styles.noposts}>
             <p>Não foram encontrados Posts</p>
