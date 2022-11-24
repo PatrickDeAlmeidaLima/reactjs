@@ -1,3 +1,4 @@
+/*eslint no-unused-expressions: "error"*/
 import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
 import { collection, query, orderBy, onSnapshot, where, QuerySnapshot } from "firebase/firestore";
@@ -16,11 +17,15 @@ export const useFetchDocument = (docCollection, search = null, uid = null) => {
             const collectionRef = await collection(db, docCollection)
             try {
 
-                let q;
-                //search
-                //dashboard
-                q = await query(collectionRef, orderBy("createdAt", "desc"));
-
+                let q
+                if (search) {
+                    q = await query(collectionRef),
+                        where("tags", "array-contains", search),
+                        orderBy("createdAt", "desc");
+                } else {
+                    q = await query(collectionRef,
+                        orderBy("createdAt", 'desc'));
+                }
                 await onSnapshot(q, (querySnapshot) => {
                     setDocuments(
                         querySnapshot.docs.map((doc) => ({
