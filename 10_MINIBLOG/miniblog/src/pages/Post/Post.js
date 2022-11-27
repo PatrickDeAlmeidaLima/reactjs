@@ -8,10 +8,11 @@ import React from 'react'
 
 const Post = () => {
     const { id } = useParams();
-    const { document: post } = useFetchPost("posts", id)
+    const { document: post, loading } = useFetchPost("posts", id)
 
     return (
         <div>
+            {loading && <p>Carregando post...</p>}
             {post && (
                 <>
                     <h1>{post.title}</h1>
