@@ -38,8 +38,8 @@ const NavBar = () => {
                 {user && (
                     <>
                         <li>
-                            <NavLink to="/post/create" className={({ isActive }) => (isActive ? (styles.active) : (""))}>
-                                Novo post
+                            <NavLink to="/posts/create" className={({ isActive }) => (isActive ? (styles.active) : (""))}>
+                                Novo posts
                             </NavLink>
                         </li>
                         <li>
