@@ -63,5 +63,5 @@ export const useInsertDocument = (docCollection) => {
     useEffect(() => {
         return () => setCancelled(true);
     }, [])
-    return { insertedDocument, response }
+    return { insertDocument, response }
 }
