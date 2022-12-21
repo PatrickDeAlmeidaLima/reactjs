@@ -3,12 +3,11 @@
 }
 
 .post_detail img {
-    max-width: 60%;
+    max-width: 600px;
 }
 
-
 .post_detail h2 {
-    margin-bottom: .4em;
+    margin-bottom: 0.4em;
 }
 
 .post_detail .tags {
@@ -17,16 +16,16 @@
 }
 
 .tags p {
-    margin-right: .5em;
+    margin-right: 0.5em;
 }
 
 .tags span {
     font-weight: bold;
 }
 
-.createdBy {
+.createdby {
     font-style: italic;
     color: #444;
-    font-size: .8em;
+    font-size: 0.8em;
     margin-bottom: 1em;
 }
