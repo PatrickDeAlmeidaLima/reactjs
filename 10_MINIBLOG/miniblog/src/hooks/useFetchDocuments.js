@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
+// eslint-disable-next-line
 import { collection, query, orderBy, onSnapshot, where, QuerySnapshot } from "firebase/firestore";
 
 export const useFetchDocuments = (docCollection, search = null, uid = null) => {
@@ -26,7 +27,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
                 if (search) {
                     q = await query(
                         collectionRef,
-                        where("tags", "array-contains", search),
+                        where("tagsArray", "array-contains", search),
                         orderBy("createdAt", "desc")
                     );
                 } else {
@@ -57,6 +58,5 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
     useEffect(() => {
         return () => setCancelled(true);
     }, []);
-    { console.log(documents) }
     return { documents, loading, error };
 };
