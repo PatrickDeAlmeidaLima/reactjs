@@ -41,7 +41,7 @@ const Dashboard = () => {
                         <div key={post.id} className={styles.post_row}>
                             <p>{post.title}</p>
                             <div>
-                                <Link to={`/post/${post.id}`} className="btn btn-outline">
+                                <Link to={`/posts/${post.id}`} className="btn btn-outline">
                                     Ver
                                 </Link>
                                 <Link to={`/posts/edit/${post.id}`} className="btn btn-outline">
