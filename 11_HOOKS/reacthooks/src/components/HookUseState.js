@@ -11,6 +11,10 @@ const HookUseState = () => {
         console.log("userName", userName);
         console.log("setName", name);
     }
+
+    // 2 - useState e input
+    const [age, setAge] = useState(18);
+    
     return (
         <div>
             {/* 1 - useState */}
