@@ -1,5 +1,6 @@
 import React from 'react'
 import HookUseReducer from '../components/HookUseReducer'
+import HookUserEffect from '../components/HookUserEffect'
 import HookUseState from '../components/HookUseState'
 
 const Home = () => {
@@ -8,6 +9,8 @@ const Home = () => {
             <HookUseState />
             <hr />
             <HookUseReducer />
+            <hr />
+            <HookUserEffect />
         </div>
     )
 }
