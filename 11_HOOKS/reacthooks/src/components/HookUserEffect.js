@@ -27,6 +27,16 @@ const HookUserEffect = () => {
         }
     }, [anotherNumber])
 
+    // 4 - cleanup do userEffect
+    // useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //         console.log("Hello world!");
+    //     }, 2000);
+
+    //     setAnotherNumber(anotherNumber + 1); // essa linha fica rodando infinitamente até mudar de página ou ser desabilitada
+    //     return () => clearTimeout(timer);
+    // }, [anotherNumber])
+
     return (
         <div>
             <h2>useEffect</h2>
