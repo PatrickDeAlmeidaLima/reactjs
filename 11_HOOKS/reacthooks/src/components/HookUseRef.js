@@ -36,6 +36,7 @@ const HookUseRef = () => {
                 <input type="text" ref={inputRef} value={text} onChange={(e) => setText(e.target.value)} />
                 < input type="submit" value="Enviar" />
             </form>
+            <hr />
         </div>
     )
 }
